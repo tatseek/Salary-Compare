@@ -3,7 +3,7 @@
 A full-stack compensation intelligence platform built with Next.js 15, TypeScript, Prisma ORM, and Neon PostgreSQL.
 
 ## Live Demo
-[https://comp-iq.vercel.app](https://comp-iq.vercel.app)
+[https://salary-compare-rho.vercel.app/](https://salary-compare-git-main-tatseeks-projects.vercel.app/)
 
 ## Features
 
