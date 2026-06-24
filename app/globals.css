@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0f0f11;
+  --bg-card: #17171a;
+  --bg-hover: #1e1e22;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.15);
+  --text-primary: #f1f0ed;
+  --text-secondary: #8b8a85;
+  --text-muted: #555450;
+  --accent: #7c6af7;
+  --accent-light: #9d8ff9;
+  --accent-dim: rgba(124,106,247,0.12);
+  --green: #22c55e;
+  --amber: #f59e0b;
+  --red: #ef4444;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--accent-dim); }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.btn-primary:hover { opacity: 0.85; }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-ghost:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+input, select, textarea {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 10px 14px;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent);
+}
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
+}
+
+select option { background: #1e1e22; }
+
+label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.badge-level {
+  background: var(--accent-dim);
+  color: var(--accent-light);
+}
+
+.badge-remote {
+  background: rgba(34,197,94,0.12);
+  color: var(--green);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+thead th {
+  text-align: left;
+  padding: 10px 16px;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+thead th:hover { color: var(--text-secondary); }
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+tbody tr:hover { background: var(--bg-hover); }
+tbody tr:last-child { border-bottom: none; }
+
+tbody td {
+  padding: 14px 16px;
+  color: var(--text-primary);
+  vertical-align: middle;
+}
+
+.tc-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.nav-link:hover, .nav-link.active {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-hover) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter-chip:hover, .filter-chip.active {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  background: var(--accent-dim);
+}
+
+.compare-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.compare-card.selected {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+}
